@@ -1,5 +1,5 @@
 //REQUIRED IMPORTS
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import './Search.scss';
 
@@ -7,17 +7,15 @@ import './Search.scss';
 import { showUsers } from 'redux/usersRedux';
 
 let Search = () => {
-    /*HOOKS STATE*/
-    let [searchText, textChange] = useState('');
+    //*HOOKS REF*/
+    const inputEl = useRef(null);
 
     /*HOOKS DISPATCH*/
     const dispatch = useDispatch();
-
-    const handleChange = (e) => textChange(searchText = e.target.value);
    
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(showUsers(searchText));
+        dispatch(showUsers(inputEl.current.value));
     }
 
     return (
@@ -27,7 +25,7 @@ let Search = () => {
                 type="text"
                 id="searchText"
                 placeholder="Search..."
-                onChange={handleChange}
+                ref={inputEl}
             />
         </form>
     )
