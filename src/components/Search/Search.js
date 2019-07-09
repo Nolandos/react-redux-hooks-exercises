@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import './Search.scss';
 
 //IMPORT REDUX ELEMENTS
-import { showUsers } from '../../redux/usersRedux';
+import { showUsers } from 'redux/usersRedux';
 
 let Search = () => {
     /*HOOKS STATE*/

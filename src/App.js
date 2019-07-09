@@ -2,11 +2,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import './App.scss';
-import './components/index';
 
-//IMPORT COMONENTS
-import User from './components/User/User';
-import Search from './components/Search/Search';
+//IMPORT COMPONENTS
+import {
+  Search,
+  User,
+} from './components';
 
 const App = () => {
   /*HOOKS SELECTORS*/
